@@ -58,7 +58,7 @@ let users = [
 const usersWithBalanceBiggestThenTwoThousands = users
   .filter(function(user) {
     let userBalanceWithDollar = user.balance.replaceAll(',', '');
-    let userBalance = parseFloat(userBalanceWithDollar.slice(1, userBalanceWithDollar.length));
+    let userBalance = parseFloat(userBalanceWithDollar.slice(1));
     return userBalance > 2000;
   })
 
@@ -70,7 +70,7 @@ const usersWithBalanceBiggestThenTwoThousandPhones = usersWithBalanceBiggestThen
 const sumOfUsersWithBalanceBiggestThenTwoThousandsBalances = usersWithBalanceBiggestThenTwoThousands
   .map(function(user) {
     let userBalanceWithDollar = user.balance.replaceAll(',', '');
-    let userBalance = parseFloat(userBalanceWithDollar.slice(1, userBalanceWithDollar.length));
+    let userBalance = parseFloat(userBalanceWithDollar.slice(1));
     return userBalance;
   })
   .reduce(function(prevValue, currentValue) {
